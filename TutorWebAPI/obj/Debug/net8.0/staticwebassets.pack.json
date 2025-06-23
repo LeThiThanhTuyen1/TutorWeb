@@ -1,0 +1,65 @@
+{
+  "Files": [
+    {
+      "Id": "E:\\c#\\TutorWebAPI\\TutorWebAPI\\wwwroot\\uploads\\018bf09c-793c-4540-83f2-6b52ac3df982.jpg",
+      "PackagePath": "staticwebassets\\uploads\\018bf09c-793c-4540-83f2-6b52ac3df982.jpg"
+    },
+    {
+      "Id": "E:\\c#\\TutorWebAPI\\TutorWebAPI\\wwwroot\\uploads\\04fd4459-a4a5-48be-ba5c-640c09eca77c.webp",
+      "PackagePath": "staticwebassets\\uploads\\04fd4459-a4a5-48be-ba5c-640c09eca77c.webp"
+    },
+    {
+      "Id": "E:\\c#\\TutorWebAPI\\TutorWebAPI\\wwwroot\\uploads\\27b3718b-2303-4239-92fb-853d15d1475f.jpg",
+      "PackagePath": "staticwebassets\\uploads\\27b3718b-2303-4239-92fb-853d15d1475f.jpg"
+    },
+    {
+      "Id": "E:\\c#\\TutorWebAPI\\TutorWebAPI\\wwwroot\\uploads\\454c2c24-695f-42f8-9665-0e9ed257c757.jpg",
+      "PackagePath": "staticwebassets\\uploads\\454c2c24-695f-42f8-9665-0e9ed257c757.jpg"
+    },
+    {
+      "Id": "E:\\c#\\TutorWebAPI\\TutorWebAPI\\wwwroot\\uploads\\5eacab5d-a490-4585-bd08-3ab4e910f4c7.jpg",
+      "PackagePath": "staticwebassets\\uploads\\5eacab5d-a490-4585-bd08-3ab4e910f4c7.jpg"
+    },
+    {
+      "Id": "E:\\c#\\TutorWebAPI\\TutorWebAPI\\wwwroot\\uploads\\7b8080f4-a89e-4d7a-8299-40b1bea4d2c2.jpg",
+      "PackagePath": "staticwebassets\\uploads\\7b8080f4-a89e-4d7a-8299-40b1bea4d2c2.jpg"
+    },
+    {
+      "Id": "E:\\c#\\TutorWebAPI\\TutorWebAPI\\wwwroot\\uploads\\8d347334-0234-49f1-a388-09faa29ecf0e.jpg",
+      "PackagePath": "staticwebassets\\uploads\\8d347334-0234-49f1-a388-09faa29ecf0e.jpg"
+    },
+    {
+      "Id": "E:\\c#\\TutorWebAPI\\TutorWebAPI\\wwwroot\\uploads\\b4242e0d-3c1b-4f8c-b6ec-0c6410edab2c.jpg",
+      "PackagePath": "staticwebassets\\uploads\\b4242e0d-3c1b-4f8c-b6ec-0c6410edab2c.jpg"
+    },
+    {
+      "Id": "E:\\c#\\TutorWebAPI\\TutorWebAPI\\wwwroot\\uploads\\e3e197c0-b70d-49bf-8515-b61f7ec8f59c.jpg",
+      "PackagePath": "staticwebassets\\uploads\\e3e197c0-b70d-49bf-8515-b61f7ec8f59c.jpg"
+    },
+    {
+      "Id": "E:\\c#\\TutorWebAPI\\TutorWebAPI\\wwwroot\\uploads\\userprofile.jpg",
+      "PackagePath": "staticwebassets\\uploads\\userprofile.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.TutorWebAPI.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.TutorWebAPI.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.TutorWebAPI.props",
+      "PackagePath": "build\\TutorWebAPI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.TutorWebAPI.props",
+      "PackagePath": "buildMultiTargeting\\TutorWebAPI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.TutorWebAPI.props",
+      "PackagePath": "buildTransitive\\TutorWebAPI.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

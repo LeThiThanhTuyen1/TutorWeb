@@ -1,0 +1,715 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TutorWebAPI</name>
+    </assembly>
+    <members>
+        <member name="M:TutorWebAPI.Controllers.AdminController.GetDashboard">
+            <summary>
+            Get admin dashboard data
+            </summary>
+        </member>
+        <member name="M:TutorWebAPI.Controllers.AdminController.GetAllUsers(System.Int32,System.Int32)">
+            <summary>
+            Get all users with pagination
+            </summary>
+        </member>
+        <member name="M:TutorWebAPI.Controllers.AdminController.AddUser(User)">
+            <summary>
+            Add new user
+            </summary>
+        </member>
+        <member name="M:TutorWebAPI.Controllers.AdminController.UpdateUser(System.Int32,User)">
+            <summary>
+            Update user by ID
+            </summary>
+        </member>
+        <member name="M:TutorWebAPI.Controllers.AdminController.DeleteUsers(System.Collections.Generic.List{System.Int32})">
+            <summary>
+            Delete users by IDs
+            </summary>
+        </member>
+        <member name="M:TutorWebAPI.Controllers.ContractController.GetContractById(System.Int32)">
+            <summary>
+            Retrieves a contract by its ID.
+            </summary>
+            <param name="id">The ID of the contract.</param>
+            <returns>The contract details if found, or a 404 status if not.</returns>
+        </member>
+        <member name="M:TutorWebAPI.Controllers.ContractController.GetAllContracts(TutorWebAPI.Filter.PaginationFilter)">
+            <summary>
+            Get paginated list of all contracts
+            </summary>
+            <param name="filter">Pagination parameters (pageNumber, pageSize)</param>
+            <returns>Paginated list of contracts</returns>
+        </member>
+        <member name="M:TutorWebAPI.Controllers.ContractController.GetContractsByUserId(TutorWebAPI.Filter.PaginationFilter)">
+            <summary>
+            Get paginated list of contracts by user ID
+            </summary>
+            <param name="filter">Pagination parameters (pageNumber, pageSize)</param>
+            <returns>Paginated list of contracts for the user</returns>
+        </member>
+        <member name="M:TutorWebAPI.Controllers.CourseController.GetAllCourses(TutorWebAPI.Filter.PaginationFilter,System.String,System.String)">
+            <summary>
+            Retrieves all available courses.
+            </summary>
+        </member>
+        <member name="M:TutorWebAPI.Controllers.CourseController.GetTutorCoursesByUserId(TutorWebAPI.Filter.PaginationFilter)">
+            <summary>
+            Retrieves courses by tutor ID.
+            </summary>
+        </member>
+        <member name="M:TutorWebAPI.Controllers.CourseController.GetStudentCoursesByUserId(TutorWebAPI.Filter.PaginationFilter)">
+            <summary>
+            Get paginated list of students by user id
+            </summary>
+            <param name="filter"></param>
+            <returns>Paginated list of students by user id</returns>
+        </member>
+        <member name="M:TutorWebAPI.Controllers.CourseController.GetCourseById(System.Int32)">
+            <summary>
+            Retrieves a course by its ID.
+            </summary>
+        </member>
+        <member name="M:TutorWebAPI.Controllers.CourseController.CreateCourse(TutorWebAPI.DTOs.CourseDTO)">
+            <summary>
+            Creates a new course.
+            </summary>
+        </member>
+        <member name="M:TutorWebAPI.Controllers.CourseController.UpdateCourse(System.Int32,TutorWebAPI.Models.Course)">
+            <summary>
+            Updates an existing course by its ID.
+            </summary>
+        </member>
+        <member name="M:TutorWebAPI.Controllers.CourseController.CancelCourse(System.Int32)">
+            <summary>
+            Cancels a course by its ID.
+            </summary>
+        </member>
+        <member name="M:TutorWebAPI.Controllers.CourseController.GetStudentsByCourseId(System.Int32)">
+            <summary>
+            Retrieves all students enrolled in a course.
+            </summary>
+        </member>
+        <member name="M:TutorWebAPI.Controllers.CourseController.DeleteCourses(System.Collections.Generic.List{System.Int32})">
+            <summary>
+            Deletes multiple courses by their IDs.
+            </summary>
+        </member>
+        <member name="M:TutorWebAPI.Controllers.FeedbacksController.AddFeedback(TutorWebAPI.Models.Feedback)">
+            <summary>
+            add a new user feedback
+            </summary>
+            <param name="feedback">Feedback information</param>
+            <returns>Add result according to model response</returns>
+        </member>
+        <member name="M:TutorWebAPI.Controllers.FeedbacksController.UpdateFeedback(System.Int32,TutorWebAPI.Models.Feedback)">
+            <summary>
+            Update user feedback
+            </summary>
+            <param name="feedbackId">Unique feedback id</param>
+            <param name="feedback">Feedback information via feedback id</param>
+            <returns>Update result according to model response</returns>
+        </member>
+        <member name="M:TutorWebAPI.Controllers.FeedbacksController.DeleteFeedback(System.Int32)">
+            <summary>
+            Delete user feedback
+            </summary>
+            <param name="feedbackId">Unique feedback Id</param>
+            <returns>Delete result</returns>
+        </member>
+        <member name="M:TutorWebAPI.Controllers.FeedbacksController.GetTutorFeedbacks(System.Int32)">
+            <summary>
+            Get list of user feedback with tutor by tutor id
+            </summary>
+            <param name="tutorId">Tutor Id</param>
+            <returns>List of user feedback with tutor</returns>
+        </member>
+        <member name="M:TutorWebAPI.Controllers.FeedbacksController.GetFeedbackByUser(System.Int32)">
+            <summary>
+            Get user feedback information with tutor via tutor id
+            </summary>
+            <param name="tutorId">Tutor ID</param>
+            <returns>user feedback information</returns>
+        </member>
+        <member name="M:TutorWebAPI.Controllers.NotificationController.GetUserNotifications">
+            <summary>
+            Get a list of unread notifications
+            </summary>
+            <returns>List of unread notifications</returns>
+        </member>
+        <member name="M:TutorWebAPI.Controllers.NotificationController.GetUnreadNotifications">
+            <summary>
+            Get a list of unread notifications
+            </summary>
+            <returns>Lists unread notifications if found, and returns an empty list if not found.</returns>
+        </member>
+        <member name="M:TutorWebAPI.Controllers.NotificationController.GetReadNotifications">
+            <summary>
+            Get list of notifications that have been read
+            </summary>
+            <returns>Lists notifications that have been read if found, and returns an empty list if not found.</returns>
+        </member>
+        <member name="M:TutorWebAPI.Controllers.NotificationController.MarkAsRead(System.Int32)">
+            <summary>
+            Mark a notification as read
+            </summary>
+            <param name="id">Unique notification id</param>
+            <returns>Ok with type response</returns>
+        </member>
+        <member name="M:TutorWebAPI.Controllers.ScheduleController.GetAllSchedules">
+            <summary>
+            Retrieves all schedules.
+            </summary>
+        </member>
+        <member name="M:TutorWebAPI.Controllers.ScheduleController.GetScheduleById(System.Int32)">
+            <summary>
+            Retrieves a schedule by its ID.
+            </summary>
+        </member>
+        <member name="M:TutorWebAPI.Controllers.ScheduleController.CreateSchedule(TutorWebAPI.DTOs.ScheduleDTO)">
+            <summary>
+            Creates a new schedule.
+            </summary>
+        </member>
+        <member name="M:TutorWebAPI.Controllers.ScheduleController.UpdateSchedule(System.Int32,TutorWebAPI.DTOs.ScheduleDTO)">
+            <summary>
+            Updates an existing schedule by its ID.
+            </summary>
+        </member>
+        <member name="M:TutorWebAPI.Controllers.ScheduleController.DeleteSchedules(System.Collections.Generic.List{System.Int32})">
+            <summary>
+            Deletes multiple schedules based on their IDs.
+            </summary>
+        </member>
+        <member name="M:TutorWebAPI.Controllers.StudentController.GetStats">
+            <summary>
+            Get statistics based on student data
+            </summary>
+            <returns>statistics result</returns>
+        </member>
+        <member name="M:TutorWebAPI.Controllers.StudentController.GetSubjects">
+            <summary>
+            Get subject statistics based on student data
+            </summary>
+            <returns>Subject statistics</returns>
+        </member>
+        <member name="M:TutorWebAPI.Controllers.StudentController.GetCourses">
+            <summary>
+            Get courses statistics based on student data
+            </summary>
+            <returns>Courses statistics</returns>
+        </member>
+        <member name="M:TutorWebAPI.Controllers.StudentController.GetTutors">
+            <summary>
+            Get tutors statistics based on student data
+            </summary>
+            <returns>Tutors statistics</returns>
+        </member>
+        <member name="M:TutorWebAPI.Controllers.StudentController.GetStatsPubblic">
+            <summary>
+            Get statistics public based on system data
+            </summary>
+            <returns>Statistics result</returns>
+        </member>
+        <member name="M:TutorWebAPI.Controllers.StudentController.TrainModel">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TutorWebAPI.Controllers.StudentController.GetTutorRecommendations">
+            <summary>
+            
+            </summary>
+            <param name="studentId"></param>
+            <param name="subject"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TutorWebAPI.Controllers.TutorsController.SearchTutors(TutorWebAPI.DTOs.TutorSearchDTO,TutorWebAPI.Filter.PaginationFilter)">
+            <summary>
+            Search for tutors based on search criteria provided by the user.
+            </summary>
+            <param name="searchCriteria">An object containing the search criteria for finding suitable tutors.</param>
+            <param name="filter">An object containing page size and page number for pagination.</param>
+            <returns>
+            Returns a list of tutors that match the search criteria.
+            </returns>
+            <response code="200">Returns a list paginated of tutors matching the search criteria.</response>
+            <response code="404">Returns if no tutor matches the search criteria.</response>
+        </member>
+        <member name="M:TutorWebAPI.Controllers.TutorsController.GetAllTutors(TutorWebAPI.Filter.PaginationFilter)">
+            <summary>
+            Get all tutors.
+            </summary>
+        </member>
+        <member name="M:TutorWebAPI.Controllers.TutorsController.GetTutorByUserId(System.Int32)">
+            <summary>
+            Get tutor details by user ID.
+            </summary>
+        </member>
+        <member name="M:TutorWebAPI.Controllers.TutorsController.GetDashboard">
+            <summary>
+            Get statistics based on tutor data
+            </summary>
+            <returns>Statistics result</returns>
+        </member>
+        <member name="T:TutorWebAPI.Migrations.initialCreate">
+            <inheritdoc />
+        </member>
+        <member name="M:TutorWebAPI.Migrations.initialCreate.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:TutorWebAPI.Migrations.initialCreate.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:TutorWebAPI.Migrations.initialCreate.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:TutorWebAPI.Migrations.FixUserColumnMapping">
+            <inheritdoc />
+        </member>
+        <member name="M:TutorWebAPI.Migrations.FixUserColumnMapping.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:TutorWebAPI.Migrations.FixUserColumnMapping.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:TutorWebAPI.Migrations.FixUserColumnMapping.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:TutorWebAPI.Migrations.AddBlacklistedTokens">
+            <inheritdoc />
+        </member>
+        <member name="M:TutorWebAPI.Migrations.AddBlacklistedTokens.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:TutorWebAPI.Migrations.AddBlacklistedTokens.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:TutorWebAPI.Migrations.AddBlacklistedTokens.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:TutorWebAPI.Migrations.FixTutorRatingTyped2">
+            <inheritdoc />
+        </member>
+        <member name="M:TutorWebAPI.Migrations.FixTutorRatingTyped2.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:TutorWebAPI.Migrations.FixTutorRatingTyped2.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:TutorWebAPI.Migrations.FixTutorRatingTyped2.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:TutorWebAPI.Migrations.FixTutorExperienceTyped">
+            <inheritdoc />
+        </member>
+        <member name="M:TutorWebAPI.Migrations.FixTutorExperienceTyped.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:TutorWebAPI.Migrations.FixTutorExperienceTyped.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:TutorWebAPI.Migrations.FixTutorExperienceTyped.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:TutorWebAPI.Migrations.addCourseIdFeedBacks">
+            <inheritdoc />
+        </member>
+        <member name="M:TutorWebAPI.Migrations.addCourseIdFeedBacks.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:TutorWebAPI.Migrations.addCourseIdFeedBacks.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:TutorWebAPI.Migrations.addCourseIdFeedBacks.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:TutorWebAPI.Migrations.addRatingCourse">
+            <inheritdoc />
+        </member>
+        <member name="M:TutorWebAPI.Migrations.addRatingCourse.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:TutorWebAPI.Migrations.addRatingCourse.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:TutorWebAPI.Migrations.addRatingCourse.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:TutorWebAPI.Migrations.fixManagerSchedulesCourses">
+            <inheritdoc />
+        </member>
+        <member name="M:TutorWebAPI.Migrations.fixManagerSchedulesCourses.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:TutorWebAPI.Migrations.fixManagerSchedulesCourses.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:TutorWebAPI.Migrations.fixManagerSchedulesCourses.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:TutorWebAPI.Migrations.fixManagerSchedulesTimeDayStartEnd">
+            <inheritdoc />
+        </member>
+        <member name="M:TutorWebAPI.Migrations.fixManagerSchedulesTimeDayStartEnd.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:TutorWebAPI.Migrations.fixManagerSchedulesTimeDayStartEnd.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:TutorWebAPI.Migrations.fixManagerSchedulesTimeDayStartEnd.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:TutorWebAPI.Migrations.addStatusComplaint">
+            <inheritdoc />
+        </member>
+        <member name="M:TutorWebAPI.Migrations.addStatusComplaint.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:TutorWebAPI.Migrations.addStatusComplaint.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:TutorWebAPI.Migrations.addStatusComplaint.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:TutorWebAPI.Migrations.verifyEmail">
+            <inheritdoc />
+        </member>
+        <member name="M:TutorWebAPI.Migrations.verifyEmail.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:TutorWebAPI.Migrations.verifyEmail.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:TutorWebAPI.Migrations.verifyEmail.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:TutorWebAPI.Migrations.removeVerifyEmail">
+            <inheritdoc />
+        </member>
+        <member name="M:TutorWebAPI.Migrations.removeVerifyEmail.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:TutorWebAPI.Migrations.removeVerifyEmail.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:TutorWebAPI.Migrations.removeVerifyEmail.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:TutorWebAPI.Migrations.addTokenFressh">
+            <inheritdoc />
+        </member>
+        <member name="M:TutorWebAPI.Migrations.addTokenFressh.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:TutorWebAPI.Migrations.addTokenFressh.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:TutorWebAPI.Migrations.addTokenFressh.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:TutorWebAPI.Migrations.deleteCourse">
+            <inheritdoc />
+        </member>
+        <member name="M:TutorWebAPI.Migrations.deleteCourse.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:TutorWebAPI.Migrations.deleteCourse.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:TutorWebAPI.Migrations.deleteCourse.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:TutorWebAPI.Migrations.updateFeeCourseAndContract">
+            <inheritdoc />
+        </member>
+        <member name="M:TutorWebAPI.Migrations.updateFeeCourseAndContract.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:TutorWebAPI.Migrations.updateFeeCourseAndContract.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:TutorWebAPI.Migrations.updateFeeCourseAndContract.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:TutorWebAPI.Migrations.fixdata">
+            <inheritdoc />
+        </member>
+        <member name="M:TutorWebAPI.Migrations.fixdata.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:TutorWebAPI.Migrations.fixdata.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:TutorWebAPI.Migrations.fixdata.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:TutorWebAPI.Migrations.addIsDeleteData">
+            <inheritdoc />
+        </member>
+        <member name="M:TutorWebAPI.Migrations.addIsDeleteData.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:TutorWebAPI.Migrations.addIsDeleteData.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:TutorWebAPI.Migrations.addIsDeleteData.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:TutorWebAPI.Migrations.addIsDeleted">
+            <inheritdoc />
+        </member>
+        <member name="M:TutorWebAPI.Migrations.addIsDeleted.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:TutorWebAPI.Migrations.addIsDeleted.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:TutorWebAPI.Migrations.addIsDeleted.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:TutorWebAPI.DTOs.FeedbackDTO">
+            <summary>
+            Data Transfer Object for submitting feedback.
+            </summary>
+        </member>
+        <member name="P:TutorWebAPI.DTOs.FeedbackDTO.Id">
+            <summary>
+            The unique identifier for the feedback.
+            </summary>
+            <example>1</example>
+        </member>
+        <member name="P:TutorWebAPI.DTOs.FeedbackDTO.StudentId">
+            <summary>
+            The unique identifier of the student submitting the feedback.
+            </summary>
+            <example>101</example>
+        </member>
+        <member name="P:TutorWebAPI.DTOs.FeedbackDTO.TutorId">
+            <summary>
+            The unique identifier of the tutor receiving the feedback.
+            </summary>
+            <example>202</example>
+        </member>
+        <member name="P:TutorWebAPI.DTOs.FeedbackDTO.Rating">
+            <summary>
+            The rating given to the tutor, must be between 1 and 5.
+            </summary>
+            <example>4</example>
+        </member>
+        <member name="P:TutorWebAPI.DTOs.FeedbackDTO.Comment">
+            <summary>
+            Comments regarding the tutor's performance. Must not exceed 500 characters.
+            </summary>
+            <example>"Great tutor, very helpful!"</example>
+        </member>
+        <member name="P:TutorWebAPI.DTOs.FeedbackDTO.CreatedAt">
+            <summary>
+            The date and time when the feedback was created.
+            </summary>
+            <example>2023-04-12T14:30:00</example>
+        </member>
+        <member name="P:TutorWebAPI.DTOs.FeedbackDTO.StudentName">
+            <summary>
+            The name of the student who submitted the feedback.
+            </summary>
+            <example>John Doe</example>
+        </member>
+        <member name="T:TutorWebAPI.DTOs.TutorSearchDTO">
+            <summary>
+            Data Transfer Object for searching tutors.
+            </summary>
+        </member>
+        <member name="P:TutorWebAPI.DTOs.TutorSearchDTO.Subjects">
+            <summary>
+            Subjects the tutor should be able to teach.
+            </summary>
+        </member>
+        <member name="P:TutorWebAPI.DTOs.TutorSearchDTO.Location">
+            <summary>
+            The location where the tutor should be available to teach (e.g., city or region).
+            </summary>
+        </member>
+        <member name="P:TutorWebAPI.DTOs.TutorSearchDTO.TeachingMode">
+            <summary>
+            The mode of teaching preferred by the student.
+            </summary>
+        </member>
+        <member name="P:TutorWebAPI.DTOs.TutorSearchDTO.MinFee">
+            <summary>
+            The minimum fee per session or per hour that the student is willing to pay.
+            </summary>
+        </member>
+        <member name="P:TutorWebAPI.DTOs.TutorSearchDTO.MaxFee">
+            <summary>
+            The maximum fee per session or per hour that the student is willing to pay.
+            </summary>
+        </member>
+        <member name="P:TutorWebAPI.DTOs.TutorSearchDTO.MinExperience">
+            <summary>
+            The minimum number of years of teaching experience the tutor should have.
+            </summary>
+        </member>
+        <member name="P:TutorWebAPI.DTOs.TutorSearchDTO.MinRating">
+            <summary>
+            The minimum rating the tutor should have (on a scale of 1 to 5).
+            </summary>
+        </member>
+        <member name="M:AuthController.CheckImage(AuthController.ImageRequest)">
+            <summary>
+            Check NSFW image
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AuthController.Register(TutorWebAPI.DTOs.RegisterDTO)">
+            <summary>
+            Registers a new user and sends an email verification code.
+            </summary>
+            <param name="dto">Contains registration information like email, password, and user details.</param>
+            <returns>Success message indicating that the email has been sent for verification.</returns>
+        </member>
+        <member name="M:AuthController.VerifyEmail(TutorWebAPI.DTOs.VerifyEmailDTO)">
+            <summary>
+            Verifies a user's email using a code sent to their email address.
+            </summary>
+            <param name="dto">Contains the email and verification code.</param>
+            <returns>Success message indicating the email has been verified or an error message.</returns>
+        </member>
+        <member name="M:AuthController.ResendVerification(TutorWebAPI.DTOs.ResendVerificationDTO)">
+            <summary>
+            Resends the email verification code to the specified email.
+            </summary>
+            <param name="dto">Contains the email for resending the verification code.</param>
+            <returns>Success message indicating that a new verification code has been sent.</returns>
+        </member>
+        <member name="M:AuthController.ForgotPassword(Microsoft.AspNetCore.Identity.Data.ForgotPasswordRequest)">
+            <summary>
+            Sends a password reset code to the specified email.
+            </summary>
+            <param name="request">Contains the email to send the reset code to.</param>
+            <returns>Success message indicating that the reset code has been sent.</returns>
+        </member>
+        <member name="M:AuthController.ResetPassword(Microsoft.AspNetCore.Identity.Data.ResetPasswordRequest)">
+            <summary>
+            Resets the user's password after verifying the reset code.
+            </summary>
+            <param name="request">Contains the email, reset code, and new password information.</param>
+            <returns>Success message if the password was reset or an error message.</returns>
+        </member>
+        <member name="M:AuthController.Login(Microsoft.AspNetCore.Identity.Data.LoginRequest)">
+            <summary>
+            Logs in the user and generates a JWT token for authentication.
+            </summary>
+            <param name="request">Contains the email and password for login.</param>
+            <returns>A JWT token if the login is successful or an error message.</returns>
+            <summary>
+            Logs out the user by invalidating the current JWT token.
+            </summary>
+            <returns>Jwt Authorization.</returns>
+            <returns>Jwt Authorization.</returns>
+        </member>
+        <member name="M:AuthController.ChangePassword(TutorWebAPI.DTOs.ChangePasswordDTO)">
+            <summary>
+            Changes the user's password after validating the old password.
+            </summary>
+            <param name="dto">Contains old and new passwords.</param>
+            <returns>Success message if the password is changed, or an error message.</returns>
+        </member>
+        <member name="M:AuthController.GetProfile">
+            <summary>
+            Retrieves the profile of the currently logged-in user.
+            </summary>
+            <returns>Profile information of the current user.</returns>
+        </member>
+        <member name="M:AuthController.UpdateProfile(TutorWebAPI.DTOs.ProfileDTO)">
+            <summary>
+            Update the profile of user
+            </summary>
+            <param name="updateProfileDto">Contains infomation of user with role</param>
+            <returns>Success message if update successful, or an error message.</returns>
+        </member>
+        <member name="M:AuthController.UploadProfileImage(Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            Upload image file 
+            </summary>
+            <param name="file"></param>
+            <returns>Success message if upload successful with path of file, or an error message </returns>
+        </member>
+        <member name="M:AuthController.Logout">
+            <summary>
+            Logout from system
+            </summary>
+            <returns>Message</returns>
+        </member>
+        <member name="M:AuthController.DeleteAccount">
+            <summary>
+            Delete user account based on id token
+            </summary>
+            <returns>Delete result</returns>
+        </member>
+        <member name="M:ComplaintController.GetAllComplaints(TutorWebAPI.Filter.PaginationFilter)">
+            <summary>
+            Fetches all complaints.
+            </summary>
+            <returns>A list of all complaints.</returns>
+            <response code="200">Returns the list of complaints.</response>
+        </member>
+        <member name="M:ComplaintController.CreateComplaint(TutorWebAPI.Models.Complaint)">
+            <summary>
+            Creates a new complaint.
+            </summary>
+            <param name="complaint">Complaint object to create.</param>
+            <returns>The created complaint.</returns>
+            <response code="201">Returns the newly created complaint.</response>
+            <response code="400">If the complaint data is invalid.</response>
+        </member>
+        <member name="M:ComplaintController.GetComplaintById(System.Int32)">
+            <summary>
+            Fetches a specific complaint by its ID.
+            </summary>
+            <param name="id">The ID of the complaint.</param>
+            <returns>The complaint data for the specified ID.</returns>
+            <response code="200">Returns the complaint details.</response>
+            <response code="404">If the complaint is not found.</response>
+        </member>
+        <member name="M:ComplaintController.ProcessComplaint(System.Int32,ComplaintActionRequest)">
+            <summary>
+            Processes a complaint by approving or rejecting it.
+            </summary>
+            <param name="complaintId">The ID of the complaint to process.</param>
+            <param name="request">The action request containing the processing action ("approve" or "reject").</param>
+            <returns>A message indicating the result of the processing action.</returns>
+            <response code="200">If the complaint has been successfully processed.</response>
+            <response code="400">If the complaint has no valid contract, the action is invalid, or the complaint can't be processed.</response>
+            <response code="404">If the complaint is not found.</response>
+        </member>
+        <member name="M:EnrollmentsController.RegisterCourse(TutorWebAPI.DTOs.EnrollmentRequest)">
+            <summary>
+            Registers a student for a course.
+            </summary>
+            <param name="request">The enrollment request course IDs.</param>
+            <returns>A Response object indicating the result of the registration process.</returns>
+            <response code="200">If registration is successful and contract is created.</response>
+            <response code="400">If the request is invalid, the student is ineligible, or there is a schedule conflict.</response>
+            <response code="404">If the course does not exist.</response>
+        </member>
+        <member name="M:EnrollmentsController.UnenrollStudent(TutorWebAPI.DTOs.EnrollmentRequest)">
+            <summary>
+            Canceling a registered course
+            </summary>
+            <param name="request"></param>
+            <returns>Cancel result</returns>
+        </member>
+        <member name="M:EnrollmentsController.GetEnrollmentById(System.Int32)">
+            <summary>
+            Get enrollment information by id
+            </summary>
+            <param name="enrollmentId">Enrollment Id</param>
+            <returns> enrollment information</returns>
+        </member>
+    </members>
+</doc>
